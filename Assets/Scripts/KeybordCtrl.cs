@@ -22,7 +22,7 @@ public class KeybordCtrl : MonoBehaviour
         yAngle = angle.x;
         if (ctx.performed)
         {
-            sphere.transform.Rotate(-xAngle, -yAngle, 0, Space.Self);
+            sphere.transform.Rotate(xAngle, -yAngle, 0, Space.World);
         }
         //sphere.transform.Rotate(-xAngle, -yAngle, 0, Space.Self);
     }
