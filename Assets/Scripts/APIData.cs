@@ -13,7 +13,7 @@ public class APIData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string uri = "https://api.openweathermap.org/data/2.5/weather?appid=34db0613f8131128ffb627ee457cf083&lat=43.6961&lon=7.27178&units=metric&lang=fr";
+        string uri = "https://api.openweathermap.org/data/2.5/weather?appid=34db0613f8131128ffb627ee457cf083&lat=43.6961&lon=7.27178&exclude=daily&units=metric&lang=fr";
         // A correct website page.
         StartCoroutine(GetRequest(uri));
 

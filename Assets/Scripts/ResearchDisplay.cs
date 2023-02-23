@@ -3,46 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeatherDisplay2 : MonoBehaviour
+public class ResearchDisplay : MonoBehaviour
 {
-    
-    [SerializeField] Text temperature;
+    WeatherDisplay2 wDisplay;
+
     [SerializeField] Text latitude;
     [SerializeField] Text longitude;
     [SerializeField] Text town;
-    float temp;
-    float tmp;
+    [SerializeField] Text country;
+    //[SerializeField] Text temperature;
+    //float temp;
+    // float tmp;
     // float latitude;
     // float longitude;
     float lat;
     float lon;
+    Vector2 longLat;
     // Start is called before the first frame update
     void Start()
     {
-     
+
     }
 
-    
-    
-    public void GetTemp(float tmp)
-    {
-        temp = tmp;
-        temperature.text = "Température :" + temp;
-    }
+       
     public void GetCoord(float lat, float lon)
     {
         float lati = lat;
         float longi = lon;
-       
+
         latitude.text = "la latitude :" + lati;
         longitude.text = "la longitude :" + longi;
     }
 
-    public void GetTown(string twn)
+    public void GetTown(string twn, string cntr)
     {
         string tow = twn;
-        
+        string countr = cntr;
         town.text = "la ville :" + tow;
-       
+        country.text = "le Pays :" + countr;
+
     }
 }

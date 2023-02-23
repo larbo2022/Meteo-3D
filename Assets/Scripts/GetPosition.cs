@@ -6,6 +6,7 @@ using static System.Math;
 
 public class GetPosition : MonoBehaviour
 {
+    [SerializeField] ApiRequest apiRequest;
     bool isClicked;
     Vector3 clickPos;
     Vector2 longLat;
@@ -28,6 +29,8 @@ public class GetPosition : MonoBehaviour
             // Transform into collider's local coordinate system.
             Vector3 offset = rt.collider.transform.InverseTransformPoint(rt.point);
             longLat = ToSpherical(offset);
+
+            apiRequest.GetSearchCoord(longLat);
         }
     }
 
@@ -40,12 +43,16 @@ public class GetPosition : MonoBehaviour
         float lat = Mathf.Asin(position.y) * Mathf.Rad2Deg;
 
         // Use the 2-argument arctangent, which will correctly handle all four quadrants.
-        float lon = Mathf.Atan2(position.x, position.z) * Mathf.Rad2Deg;
 
+        float lon = 90 - Mathf.Atan2(position.x, position.z) * Mathf.Rad2Deg;
+        if (lon > 180f)
+        {
+            lon -= 360f;
+        }
         // Here I'm assuming (0, 0, 1) = 0 degrees longitude, and (1, 0, 0) = +90.
         // You can exchange/negate the components to get a different longitude convention.
 
-        Debug.Log(lat + ", " + lon);
+       // Debug.Log(lat + ", " + lon);
 
         // I usually put longitude first because I associate vector.x with "horizontal."
         return new Vector2(lon, lat);

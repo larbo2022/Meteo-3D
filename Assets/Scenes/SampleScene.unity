@@ -1202,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89de0e9f33adbef4cbab7ec93c49f68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  apiRequest: {fileID: 1599710722}
 --- !u!135 &552146824
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1951,6 +1952,8 @@ GameObject:
   - component: {fileID: 1599710721}
   - component: {fileID: 1599710720}
   - component: {fileID: 1599710719}
+  - component: {fileID: 1599710723}
+  - component: {fileID: 1599710722}
   m_Layer: 0
   m_Name: DisplayManager
   m_TagString: Untagged
@@ -2002,6 +2005,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1599710722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599710718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab73f8bd81d5b24478259f1a0f7d6d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rDisplay: {fileID: 1599710723}
+  wDisplay: {fileID: 1599710719}
+--- !u!114 &1599710723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599710718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbf76e8f3322441ab4263a88e207bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latitude: {fileID: 1406345192}
+  longitude: {fileID: 1191514582}
+  town: {fileID: 389717735}
+  country: {fileID: 2132796892}
 --- !u!1 &1805759248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2277,7 @@ GameObject:
   - component: {fileID: 2132796893}
   - component: {fileID: 2132796892}
   m_Layer: 5
-  m_Name: Temp Text
+  m_Name: CountryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
